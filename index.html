@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하시오!!!</strong> By. J</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('283e28faf690a8eef524797582a84d4b');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '지용 & 나영의 결혼식에 초대합니다',
+        description: '2022년 1월 23일 12시 더클래스청담',
+        imageUrl:
+          'https://jiyonghhh.github.io/mcards/IMG_0521 복사.jpg',
+        imageWidth: 4333,
+        imageHeight: 6499,
+        link: {
+          mobileWebUrl: 'https://barunsonmcard.com/m/YongnYoung_',
+          webUrl: 'https://barunsonmcard.com/m/YongnYoung_',
+        },
+      },
+/*      social: {
+        likeCount: 200, //99999가 최대입니다
+        commentCount: 300, //99999가 최대입니다
+        sharedCount: 500, //99999가 최대입니다
+      },  */
+      buttons: [
+        {
+          title: '모바일 청첩장',
+          link: {
+            mobileWebUrl: 'https://barunsonmcard.com/m/YongnYoung_',
+            webUrl: 'https://barunsonmcard.com/m/YongnYoung_',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
